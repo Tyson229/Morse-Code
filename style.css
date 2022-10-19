@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: tan;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+}
+
+#translate-btn {
+  margin: 1rem;
+  background-color: rgb(83, 127, 83);
+  color: white;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 0.7rem;
+  border: none;
+}
+#translate-btn:hover {
+  box-shadow: 0 0 10px grey;
+}
+
+#input, #output {
+  border: none;
+}
+
+#output {
+  font-size: 2rem;
+}
+
+#input, #output {
+  min-width: 50vw;
+  min-height: 15vh;
+  padding: 1rem;
+}
