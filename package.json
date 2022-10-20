@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Tyson229/Morse-Code/issues"
   },
-  "homepage": "https://github.com/Tyson229/Morse-Code#readme"
+  "homepage": "https://github.com/Tyson229/Morse-Code#readme",
+  "devDependencies": {
+    "jest": "^29.2.1"
+  },
+  "scripts":{
+    "test": "jest"
+  }
 }
