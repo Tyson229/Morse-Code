@@ -1,4 +1,4 @@
-import convertToMorse from "./logic.js";
+import * as logic from "./logic.js";
 
 const dom = () => {
     const translateButton = document.getElementById("translate-btn");
@@ -7,7 +7,7 @@ const dom = () => {
         const input = document.getElementById("input");
         const output = document.getElementById("output");
         
-        output.innerText = convertToMorse(input.value);
+        output.innerText = logic.translate(input.value);
     };
 
     translateButton.addEventListener("click",displayOutput);

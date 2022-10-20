@@ -4,7 +4,7 @@ import morseCode from './data.js'
  * Convert English into Morse code
  * Ref: https://www.tutorialspoint.com/converting-string-to-morse-code-in-javascript
  */
-const convertToMorse = (str) => {
+export const convertToMorse = (str) => {
     return str.toUpperCase().split("").map(char => {
         //console.log(char);
         // Uppercase all characters in a string
@@ -14,9 +14,8 @@ const convertToMorse = (str) => {
         // If not, push the original character to the array
         // Finally, join the array into a string 
         return morseCode[char] ? morseCode[char] : char; 
-    }).join("");
+    }).join(" ");
 }
-export default convertToMorse;
 
 /* Swap key and value of the morseCode object*
  * 
@@ -34,7 +33,20 @@ const swap = (obj) => {
 /** 
  * Convert Morse code into English
  */
-const convertToEnglish = (str) => {
+export const convertToEnglish = (str) => {
     const swappedMorseCode =  swap(morseCode);
-    return str.toUpperCase().split(" ").map()
+    return str.split('/').map(word => {
+        return word.split(" ").map(code => {
+            return swappedMorseCode[code] ? swappedMorseCode[code] : code;
+        }).join('');
+    }).join(' ');
+}
+
+/**
+ * 
+ * Decide if it is a string or a Morse string 
+ * 
+ */
+export const translate = (str) => {
+    return /^[a-zA-Z ]+$/.test(str) ? convertToMorse(str) : convertToEnglish(str);
 }
