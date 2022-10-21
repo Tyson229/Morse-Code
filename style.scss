@@ -1,20 +1,34 @@
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: tan;
+    @extend %flexCenter;
+    background-color: antiquewhite;
+}
+
+.container {
+    @extend %standardSizing;
+}
+
+.header {
+    &__title {
+        text-align: center;
+    }
+    &__subtitle {
+        text-align: center;
+    }
+}
+
+main {
+    @extend %flexCenter;
 }
 
 .box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+    @extend %flexCenter;
+    width: 95%;
+    background-color: rgb(211, 211, 211);
     border-radius: 15px;
-    
+    padding: 0.5rem
 }
+
+// Styling translate button
 #translate-btn {
     margin: 1rem;
     background-color: rgb(83, 127, 83);
@@ -29,21 +43,30 @@ body {
     }
 }
 
+// Styling textarea 
 #input {
-    @extend %standardSizing;
-    border:none;
+    border-radius: 15px;
+    padding: 1rem;
+    width: 40vw;
+    min-height: 10vh;
+    background-color: white;
+    border: 1.6px solid black;
 }
 
 #output {
     @extend #input;
-    //background-color: white;
-    @extend %standardSizing;
-    font-size: 2rem;
 }
 
+
+//Placeholders
 %standardSizing {
     min-width: 50vw;
-    min-height: 15vh;
-    padding:1rem;
+    max-width: 80vw;
 }
 
+%flexCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

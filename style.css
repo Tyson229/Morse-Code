@@ -1,18 +1,19 @@
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: tan;
+  background-color: antiquewhite;
+}
+
+.header__title {
+  text-align: center;
+}
+.header__subtitle {
+  text-align: center;
 }
 
 .box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
+  width: 95%;
+  background-color: rgb(211, 211, 211);
   border-radius: 15px;
+  padding: 0.5rem;
 }
 
 #translate-btn {
@@ -29,15 +30,22 @@ body {
 }
 
 #input, #output {
-  border: none;
-}
-
-#output {
-  font-size: 2rem;
-}
-
-#input, #output {
-  min-width: 50vw;
-  min-height: 15vh;
+  border-radius: 15px;
   padding: 1rem;
+  width: 40vw;
+  min-height: 10vh;
+  background-color: white;
+  border: 1.6px solid black;
+}
+
+.container {
+  min-width: 50vw;
+  max-width: 80vw;
+}
+
+body, main, .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

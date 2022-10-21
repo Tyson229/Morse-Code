@@ -13,6 +13,7 @@ export const convertToMorse = (str) => {
         // If found, push that morse code the array
         // If not, push the original character to the array
         // Finally, join the array into a string 
+        
         return morseCode[char] ? morseCode[char] : char; 
     }).join(" ");
 }
@@ -24,10 +25,10 @@ export const convertToMorse = (str) => {
  * Ref: https://stackoverflow.com/questions/23013573/swap-key-with-value-in-object
  */
 export const swap = (obj) => {
-    return Object.keys(obj).reduce((ret,key)=> {
+    return typeof(obj) === 'object' ? Object.keys(obj).reduce((ret,key)=> {
         ret[obj[key]] = key;
         return ret;
-    }, {});
+    }, {}) : null;
 }
 
 /** 
@@ -48,6 +49,5 @@ export const convertToEnglish = (str) => {
  * 
  */
 export const translate = (str) => {
-    return /^[a-zA-Z ]+$/.test(str) ? convertToMorse(str) : convertToEnglish(str);
+    return /\w/.test(str) ? convertToMorse(str) : convertToEnglish(str);
 }
-//export default translate
